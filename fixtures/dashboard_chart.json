@@ -1,0 +1,58 @@
+[
+ {
+  "doctype": "Dashboard Chart",
+  "name": "PMO - Objectives by Status",
+  "chart_name": "Objectives by Status",
+  "chart_type": "Group By",
+  "document_type": "Strategic Objective",
+  "group_by_based_on": "status",
+  "group_by_type": "Count",
+  "type": "Donut",
+  "is_public": 1,
+  "timespan": "Last Year",
+  "time_interval": "Yearly",
+  "module": "PMO Reports"
+ },
+ {
+  "doctype": "Dashboard Chart",
+  "name": "PMO - Key Results by Status",
+  "chart_name": "Key Results by Status",
+  "chart_type": "Group By",
+  "document_type": "Key Result",
+  "group_by_based_on": "status",
+  "group_by_type": "Count",
+  "type": "Donut",
+  "is_public": 1,
+  "timespan": "Last Year",
+  "time_interval": "Yearly",
+  "module": "PMO Reports"
+ },
+ {
+  "doctype": "Dashboard Chart",
+  "name": "PMO - Portfolio Health",
+  "chart_name": "Portfolio Health",
+  "chart_type": "Group By",
+  "document_type": "Portfolio",
+  "group_by_based_on": "overall_health",
+  "group_by_type": "Count",
+  "type": "Bar",
+  "is_public": 1,
+  "timespan": "Last Year",
+  "time_interval": "Yearly",
+  "module": "PMO Reports"
+ },
+ {
+  "doctype": "Dashboard Chart",
+  "name": "PMO - Registrations by State",
+  "chart_name": "Registrations by State",
+  "chart_type": "Group By",
+  "document_type": "Project Registration",
+  "group_by_based_on": "workflow_state",
+  "group_by_type": "Count",
+  "type": "Bar",
+  "is_public": 1,
+  "timespan": "Last Year",
+  "time_interval": "Yearly",
+  "module": "PMO Reports"
+ }
+]

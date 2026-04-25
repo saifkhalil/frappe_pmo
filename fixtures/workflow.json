@@ -1,0 +1,27 @@
+[
+ {
+  "doctype": "Workflow",
+  "name": "Project Registration Approval",
+  "workflow_name": "Project Registration Approval",
+  "document_type": "Project Registration",
+  "is_active": 1,
+  "send_email_alert": 0,
+  "workflow_state_field": "workflow_state",
+  "states": [
+   {"state": "Draft", "doc_status": "0", "allow_edit": "Project Manager", "update_field": null, "update_value": null},
+   {"state": "In Review", "doc_status": "0", "allow_edit": "PMO Admin"},
+   {"state": "Sponsor Approval", "doc_status": "0", "allow_edit": "Sponsor"},
+   {"state": "PMO Approval", "doc_status": "0", "allow_edit": "PMO Admin"},
+   {"state": "Approved", "doc_status": "0", "allow_edit": "PMO Admin"},
+   {"state": "Rejected", "doc_status": "0", "allow_edit": "PMO Admin"}
+  ],
+  "transitions": [
+   {"state": "Draft", "action": "Submit for Review", "next_state": "In Review", "allowed": "Project Manager", "allow_self_approval": 1},
+   {"state": "In Review", "action": "Submit for Review", "next_state": "Sponsor Approval", "allowed": "PMO Admin", "allow_self_approval": 1},
+   {"state": "Sponsor Approval", "action": "Sponsor Approve", "next_state": "PMO Approval", "allowed": "Sponsor", "allow_self_approval": 1},
+   {"state": "Sponsor Approval", "action": "Reject", "next_state": "Rejected", "allowed": "Sponsor", "allow_self_approval": 1},
+   {"state": "PMO Approval", "action": "PMO Approve", "next_state": "Approved", "allowed": "PMO Admin", "allow_self_approval": 1},
+   {"state": "PMO Approval", "action": "Reject", "next_state": "Rejected", "allowed": "PMO Admin", "allow_self_approval": 1}
+  ]
+ }
+]

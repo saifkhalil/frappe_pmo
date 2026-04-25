@@ -1,0 +1,6 @@
+[
+ {"doctype": "Workflow Action Master", "name": "Submit for Review", "workflow_action_name": "Submit for Review"},
+ {"doctype": "Workflow Action Master", "name": "Sponsor Approve", "workflow_action_name": "Sponsor Approve"},
+ {"doctype": "Workflow Action Master", "name": "PMO Approve", "workflow_action_name": "PMO Approve"},
+ {"doctype": "Workflow Action Master", "name": "Reject", "workflow_action_name": "Reject"}
+]

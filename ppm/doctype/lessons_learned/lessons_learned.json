@@ -1,0 +1,30 @@
+{
+ "doctype": "DocType",
+ "name": "Lessons Learned",
+ "module": "PPM",
+ "engine": "InnoDB",
+ "autoname": "format:LL-{YY}-{#####}",
+ "title_field": "lesson_title",
+ "track_changes": 1,
+ "field_order": [
+  "lesson_title", "project", "column_break_1", "category", "recorded_by", "lesson_date",
+  "section_detail", "description", "recommendation"
+ ],
+ "fields": [
+  {"fieldname": "lesson_title", "fieldtype": "Data", "label": "Title", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "project", "fieldtype": "Link", "label": "Project", "options": "Project", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+  {"fieldname": "category", "fieldtype": "Select", "label": "Category", "options": "Schedule\nBudget\nScope\nQuality\nCommunication\nResource\nRisk\nProcurement\nOther"},
+  {"fieldname": "recorded_by", "fieldtype": "Link", "label": "Recorded By", "options": "User"},
+  {"fieldname": "lesson_date", "fieldtype": "Date", "label": "Date"},
+  {"fieldname": "section_detail", "fieldtype": "Section Break", "label": "Detail"},
+  {"fieldname": "description", "fieldtype": "Text Editor", "label": "Description"},
+  {"fieldname": "recommendation", "fieldtype": "Text Editor", "label": "Recommendation"}
+ ],
+ "permissions": [
+  {"role": "PMO Admin", "read": 1, "write": 1, "create": 1, "delete": 1, "report": 1, "export": 1},
+  {"role": "Portfolio Manager", "read": 1, "write": 1, "create": 1, "report": 1},
+  {"role": "Program Manager", "read": 1, "write": 1, "create": 1, "report": 1},
+  {"role": "Project Manager", "read": 1, "write": 1, "create": 1, "report": 1}
+ ]
+}

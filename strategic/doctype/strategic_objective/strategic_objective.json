@@ -1,0 +1,44 @@
+{
+ "doctype": "DocType",
+ "name": "Strategic Objective",
+ "module": "Strategic",
+ "engine": "InnoDB",
+ "autoname": "naming_series:",
+ "naming_rule": "By \"Naming Series\" field",
+ "title_field": "title",
+ "search_fields": "title",
+ "track_changes": 1,
+ "field_order": [
+  "naming_series", "title", "column_break_1", "is_active", "owner_user", "team",
+  "section_period", "strategic_period", "start_date", "target_date",
+  "section_progress", "progress_mode", "progress_pct", "column_break_2", "confidence", "status",
+  "section_desc", "description"
+ ],
+ "fields": [
+  {"fieldname": "naming_series", "fieldtype": "Select", "label": "Series", "options": "OBJ-.####", "default": "OBJ-.####", "reqd": 1, "hidden": 1},
+  {"fieldname": "title", "fieldtype": "Data", "label": "Title", "reqd": 1, "in_list_view": 1, "in_global_search": 1},
+  {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+  {"fieldname": "is_active", "fieldtype": "Check", "label": "Active", "default": "1"},
+  {"fieldname": "owner_user", "fieldtype": "Link", "label": "Owner", "options": "User", "in_list_view": 1},
+  {"fieldname": "team", "fieldtype": "Link", "label": "Team", "options": "Department"},
+  {"fieldname": "section_period", "fieldtype": "Section Break", "label": "Period"},
+  {"fieldname": "strategic_period", "fieldtype": "Link", "label": "Strategic Period", "options": "Strategic Period", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "start_date", "fieldtype": "Date", "label": "Start Date"},
+  {"fieldname": "target_date", "fieldtype": "Date", "label": "Target Date"},
+  {"fieldname": "section_progress", "fieldtype": "Section Break", "label": "Progress & Health"},
+  {"fieldname": "progress_mode", "fieldtype": "Select", "label": "Progress Mode", "options": "Manual\nAuto", "default": "Auto", "reqd": 1, "description": "Auto = weighted rollup of child Key Results"},
+  {"fieldname": "progress_pct", "fieldtype": "Percent", "label": "Progress %", "in_list_view": 1, "read_only_depends_on": "eval:doc.progress_mode === 'Auto'"},
+  {"fieldname": "column_break_2", "fieldtype": "Column Break"},
+  {"fieldname": "confidence", "fieldtype": "Int", "label": "Confidence %", "default": "75"},
+  {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Not Started\nOn Track\nAt Risk\nOff Track\nClosed", "default": "Not Started", "in_list_view": 1},
+  {"fieldname": "section_desc", "fieldtype": "Section Break", "label": "Description"},
+  {"fieldname": "description", "fieldtype": "Small Text", "label": "Description"}
+ ],
+ "permissions": [
+  {"role": "PMO Admin", "read": 1, "write": 1, "create": 1, "delete": 1, "report": 1, "export": 1},
+  {"role": "Portfolio Manager", "read": 1, "write": 1, "create": 1, "report": 1},
+  {"role": "Program Manager", "read": 1, "report": 1},
+  {"role": "OKR Owner", "read": 1, "write": 1, "create": 1, "report": 1, "if_owner": 1},
+  {"role": "Project Manager", "read": 1, "report": 1}
+ ]
+}

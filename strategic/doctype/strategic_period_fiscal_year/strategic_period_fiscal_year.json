@@ -1,0 +1,12 @@
+{
+ "doctype": "DocType",
+ "name": "Strategic Period Fiscal Year",
+ "module": "Strategic",
+ "engine": "InnoDB",
+ "istable": 1,
+ "field_order": ["fiscal_year"],
+ "fields": [
+  {"fieldname": "fiscal_year", "fieldtype": "Link", "label": "Fiscal Year", "options": "Fiscal Year", "reqd": 1, "in_list_view": 1}
+ ],
+ "permissions": []
+}

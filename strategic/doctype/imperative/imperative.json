@@ -1,0 +1,40 @@
+{
+ "doctype": "DocType",
+ "name": "Imperative",
+ "module": "Strategic",
+ "engine": "InnoDB",
+ "autoname": "naming_series:",
+ "naming_rule": "By \"Naming Series\" field",
+ "title_field": "imperative_name",
+ "search_fields": "imperative_name",
+ "track_changes": 1,
+ "field_order": [
+  "naming_series", "imperative_name", "column_break_1", "is_active", "owner_user",
+  "section_period", "strategic_period", "start_date", "target_date",
+  "section_desc", "description", "our_promise_alignment",
+  "section_obj", "objectives"
+ ],
+ "fields": [
+  {"fieldname": "naming_series", "fieldtype": "Select", "label": "Series", "options": "IMP-.####", "default": "IMP-.####", "reqd": 1, "hidden": 1},
+  {"fieldname": "imperative_name", "fieldtype": "Data", "label": "Name", "reqd": 1, "in_list_view": 1, "in_global_search": 1},
+  {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+  {"fieldname": "is_active", "fieldtype": "Check", "label": "Active", "default": "1", "in_list_view": 1},
+  {"fieldname": "owner_user", "fieldtype": "Link", "label": "Owner", "options": "User", "in_list_view": 1},
+  {"fieldname": "section_period", "fieldtype": "Section Break", "label": "Period"},
+  {"fieldname": "strategic_period", "fieldtype": "Link", "label": "Strategic Period", "options": "Strategic Period", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "start_date", "fieldtype": "Date", "label": "Start Date"},
+  {"fieldname": "target_date", "fieldtype": "Date", "label": "Target Date"},
+  {"fieldname": "section_desc", "fieldtype": "Section Break", "label": "Description"},
+  {"fieldname": "description", "fieldtype": "Small Text", "label": "Description"},
+  {"fieldname": "our_promise_alignment", "fieldtype": "Small Text", "label": "Our Promise Alignment"},
+  {"fieldname": "section_obj", "fieldtype": "Section Break", "label": "Strategic Objectives"},
+  {"fieldname": "objectives", "fieldtype": "Table", "label": "Linked Objectives", "options": "Imperative Objective Link"}
+ ],
+ "permissions": [
+  {"role": "PMO Admin", "read": 1, "write": 1, "create": 1, "delete": 1, "report": 1, "export": 1},
+  {"role": "Portfolio Manager", "read": 1, "write": 1, "create": 1, "report": 1},
+  {"role": "Program Manager", "read": 1, "report": 1},
+  {"role": "OKR Owner", "read": 1, "report": 1},
+  {"role": "Project Manager", "read": 1, "report": 1}
+ ]
+}

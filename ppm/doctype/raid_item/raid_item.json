@@ -1,0 +1,44 @@
+{
+ "doctype": "DocType",
+ "name": "RAID Item",
+ "module": "PPM",
+ "engine": "InnoDB",
+ "autoname": "naming_series:",
+ "naming_rule": "By \"Naming Series\" field",
+ "title_field": "raid_title",
+ "search_fields": "raid_title,raid_reference_number",
+ "track_changes": 1,
+ "field_order": [
+  "naming_series", "raid_type", "raid_title", "column_break_1", "raid_reference_number", "owner_user", "status",
+  "section_link", "parent_doctype", "parent_record",
+  "section_detail", "affected_area", "business_vertical", "column_break_d", "start_date", "due_date",
+  "section_desc", "description", "mitigation"
+ ],
+ "fields": [
+  {"fieldname": "naming_series", "fieldtype": "Select", "label": "Series", "options": "RAID-.####", "default": "RAID-.####", "reqd": 1, "hidden": 1},
+  {"fieldname": "raid_type", "fieldtype": "Select", "label": "Type", "options": "Risk\nAction\nIssue\nDecision", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "raid_title", "fieldtype": "Data", "label": "Title", "reqd": 1, "in_list_view": 1, "in_global_search": 1},
+  {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+  {"fieldname": "raid_reference_number", "fieldtype": "Data", "label": "Reference #"},
+  {"fieldname": "owner_user", "fieldtype": "Link", "label": "Owner", "options": "User", "in_list_view": 1},
+  {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Open\nMitigated\nClosed", "default": "Open", "in_list_view": 1},
+  {"fieldname": "section_link", "fieldtype": "Section Break", "label": "Linked To"},
+  {"fieldname": "parent_doctype", "fieldtype": "Select", "label": "Linked DocType", "options": "Project\nProgram\nPortfolio", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "parent_record", "fieldtype": "Dynamic Link", "label": "Linked Record", "options": "parent_doctype", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "section_detail", "fieldtype": "Section Break", "label": "Details"},
+  {"fieldname": "affected_area", "fieldtype": "Data", "label": "Affected Area"},
+  {"fieldname": "business_vertical", "fieldtype": "Data", "label": "Business Vertical"},
+  {"fieldname": "column_break_d", "fieldtype": "Column Break"},
+  {"fieldname": "start_date", "fieldtype": "Date", "label": "Start Date"},
+  {"fieldname": "due_date", "fieldtype": "Date", "label": "Due Date"},
+  {"fieldname": "section_desc", "fieldtype": "Section Break", "label": "Description"},
+  {"fieldname": "description", "fieldtype": "Text Editor", "label": "Description"},
+  {"fieldname": "mitigation", "fieldtype": "Text Editor", "label": "Mitigation / Resolution"}
+ ],
+ "permissions": [
+  {"role": "PMO Admin", "read": 1, "write": 1, "create": 1, "delete": 1, "report": 1, "export": 1},
+  {"role": "Portfolio Manager", "read": 1, "write": 1, "create": 1, "report": 1},
+  {"role": "Program Manager", "read": 1, "write": 1, "create": 1, "report": 1},
+  {"role": "Project Manager", "read": 1, "write": 1, "create": 1, "report": 1}
+ ]
+}

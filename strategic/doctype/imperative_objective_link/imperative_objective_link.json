@@ -1,0 +1,13 @@
+{
+ "doctype": "DocType",
+ "name": "Imperative Objective Link",
+ "module": "Strategic",
+ "engine": "InnoDB",
+ "istable": 1,
+ "field_order": ["strategic_objective", "alignment_strength"],
+ "fields": [
+  {"fieldname": "strategic_objective", "fieldtype": "Link", "label": "Strategic Objective", "options": "Strategic Objective", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "alignment_strength", "fieldtype": "Select", "label": "Alignment Strength", "options": "Primary\nSecondary", "default": "Primary", "in_list_view": 1}
+ ],
+ "permissions": []
+}

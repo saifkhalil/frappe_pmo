@@ -1,0 +1,15 @@
+{
+ "doctype": "DocType",
+ "name": "Bookable Resource Work Hours",
+ "module": "Resources",
+ "engine": "InnoDB",
+ "istable": 1,
+ "field_order": ["weekday", "start_time", "end_time", "hours"],
+ "fields": [
+  {"fieldname": "weekday", "fieldtype": "Select", "label": "Weekday", "options": "Monday\nTuesday\nWednesday\nThursday\nFriday\nSaturday\nSunday", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "start_time", "fieldtype": "Time", "label": "Start", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "end_time", "fieldtype": "Time", "label": "End", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "hours", "fieldtype": "Float", "label": "Hours", "in_list_view": 1}
+ ],
+ "permissions": []
+}

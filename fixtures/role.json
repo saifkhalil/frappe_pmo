@@ -1,0 +1,9 @@
+[
+ {"doctype": "Role", "role_name": "PMO Admin", "desk_access": 1, "name": "PMO Admin"},
+ {"doctype": "Role", "role_name": "Portfolio Manager", "desk_access": 1, "name": "Portfolio Manager"},
+ {"doctype": "Role", "role_name": "Program Manager", "desk_access": 1, "name": "Program Manager"},
+ {"doctype": "Role", "role_name": "Project Manager", "desk_access": 1, "name": "Project Manager"},
+ {"doctype": "Role", "role_name": "Sponsor", "desk_access": 1, "name": "Sponsor"},
+ {"doctype": "Role", "role_name": "OKR Owner", "desk_access": 1, "name": "OKR Owner"},
+ {"doctype": "Role", "role_name": "Resource Manager", "desk_access": 1, "name": "Resource Manager"}
+]

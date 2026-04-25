@@ -1,0 +1,19 @@
+[
+ {"doctype": "Custom Field", "name": "Project-pmo_section", "dt": "Project", "fieldname": "pmo_section", "label": "PMO", "fieldtype": "Section Break", "insert_after": "project_name", "collapsible": 1},
+ {"doctype": "Custom Field", "name": "Project-portfolio", "dt": "Project", "fieldname": "custom_portfolio", "label": "Portfolio", "fieldtype": "Link", "options": "Portfolio", "insert_after": "pmo_section"},
+ {"doctype": "Custom Field", "name": "Project-program", "dt": "Project", "fieldname": "custom_program", "label": "Program", "fieldtype": "Link", "options": "Program", "insert_after": "custom_portfolio"},
+ {"doctype": "Custom Field", "name": "Project-project_registration", "dt": "Project", "fieldname": "custom_project_registration", "label": "Project Registration", "fieldtype": "Link", "options": "Project Registration", "insert_after": "custom_program", "read_only": 1},
+ {"doctype": "Custom Field", "name": "Project-strategic_objective", "dt": "Project", "fieldname": "custom_strategic_objective", "label": "Strategic Objective", "fieldtype": "Link", "options": "Strategic Objective", "insert_after": "custom_project_registration"},
+ {"doctype": "Custom Field", "name": "Project-pmo_col1", "dt": "Project", "fieldname": "pmo_col1", "label": "", "fieldtype": "Column Break", "insert_after": "custom_strategic_objective"},
+ {"doctype": "Custom Field", "name": "Project-pmo_project_type", "dt": "Project", "fieldname": "custom_pmo_project_type", "label": "PMO Project Type", "fieldtype": "Select", "options": "\nClient Project\nBMS Internal\nStrategic\nOther", "insert_after": "pmo_col1"},
+ {"doctype": "Custom Field", "name": "Project-business_unit", "dt": "Project", "fieldname": "custom_business_unit", "label": "Business Unit", "fieldtype": "Data", "insert_after": "custom_pmo_project_type"},
+ {"doctype": "Custom Field", "name": "Project-pmo_priority", "dt": "Project", "fieldname": "custom_pmo_priority", "label": "PMO Priority", "fieldtype": "Select", "options": "\n(1) Critical\n(2) High\n(3) Moderate\n(4) Low\n(5) Optional", "insert_after": "custom_business_unit"},
+ {"doctype": "Custom Field", "name": "Project-executive_sponsor", "dt": "Project", "fieldname": "custom_executive_sponsor", "label": "Executive Sponsor", "fieldtype": "Link", "options": "User", "insert_after": "custom_pmo_priority"},
+
+ {"doctype": "Custom Field", "name": "Project-pmo_health_section", "dt": "Project", "fieldname": "pmo_health_section", "label": "Project Health", "fieldtype": "Section Break", "insert_after": "custom_executive_sponsor", "collapsible": 1},
+ {"doctype": "Custom Field", "name": "Project-overall_health", "dt": "Project", "fieldname": "custom_overall_health", "label": "Overall Health", "fieldtype": "Select", "options": "\nGreen\nYellow\nRed", "insert_after": "pmo_health_section"},
+ {"doctype": "Custom Field", "name": "Project-schedule_health", "dt": "Project", "fieldname": "custom_schedule_health", "label": "Schedule Health", "fieldtype": "Select", "options": "\nGreen\nYellow\nRed", "insert_after": "custom_overall_health"},
+ {"doctype": "Custom Field", "name": "Project-pmo_health_col", "dt": "Project", "fieldname": "pmo_health_col", "label": "", "fieldtype": "Column Break", "insert_after": "custom_schedule_health"},
+ {"doctype": "Custom Field", "name": "Project-financial_health", "dt": "Project", "fieldname": "custom_financial_health", "label": "Financial Health", "fieldtype": "Select", "options": "\nGreen\nYellow\nRed", "insert_after": "pmo_health_col"},
+ {"doctype": "Custom Field", "name": "Project-issue_health", "dt": "Project", "fieldname": "custom_issue_health", "label": "Issue Health", "fieldtype": "Select", "options": "\nGreen\nYellow\nRed", "insert_after": "custom_financial_health"}
+]

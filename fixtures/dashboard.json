@@ -1,0 +1,23 @@
+[
+ {
+  "doctype": "Dashboard",
+  "name": "ISC PMO Autopilot Overview",
+  "dashboard_name": "ISC PMO Autopilot Overview",
+  "is_default": 0,
+  "is_standard": 1,
+  "module": "PMO Reports",
+  "cards": [
+   {"card": "PMO - Strategic Pillars"},
+   {"card": "PMO - Active Strategic Goals"},
+   {"card": "PMO - Active Portfolios"},
+   {"card": "PMO - Active Programs"},
+   {"card": "PMO - Pending Registrations"}
+  ],
+  "charts": [
+   {"chart": "PMO - Objectives by Status", "width": "Half"},
+   {"chart": "PMO - Key Results by Status", "width": "Half"},
+   {"chart": "PMO - Portfolio Health", "width": "Half"},
+   {"chart": "PMO - Registrations by State", "width": "Half"}
+  ]
+ }
+]

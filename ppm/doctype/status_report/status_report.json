@@ -1,0 +1,40 @@
+{
+ "doctype": "DocType",
+ "name": "Status Report",
+ "module": "PPM",
+ "engine": "InnoDB",
+ "autoname": "format:SR-{YY}-{#####}",
+ "title_field": "report_title",
+ "track_changes": 1,
+ "field_order": [
+  "report_title", "reporting_date", "column_break_1", "submitter", "submitted_to",
+  "section_link", "parent_doctype", "parent_record",
+  "section_kpi", "overall_health", "schedule_health", "column_break_kpi", "financial_health", "issue_health", "effort_health",
+  "section_narrative", "narrative"
+ ],
+ "fields": [
+  {"fieldname": "report_title", "fieldtype": "Data", "label": "Title", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "reporting_date", "fieldtype": "Date", "label": "Reporting Date", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+  {"fieldname": "submitter", "fieldtype": "Link", "label": "Submitter", "options": "User", "in_list_view": 1},
+  {"fieldname": "submitted_to", "fieldtype": "Link", "label": "Submitted To", "options": "User"},
+  {"fieldname": "section_link", "fieldtype": "Section Break", "label": "Linked To"},
+  {"fieldname": "parent_doctype", "fieldtype": "Select", "label": "Linked DocType", "options": "Project\nProgram\nPortfolio", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "parent_record", "fieldtype": "Dynamic Link", "label": "Linked Record", "options": "parent_doctype", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "section_kpi", "fieldtype": "Section Break", "label": "KPIs"},
+  {"fieldname": "overall_health", "fieldtype": "Select", "label": "Overall Health", "options": "\nGreen\nYellow\nRed"},
+  {"fieldname": "schedule_health", "fieldtype": "Select", "label": "Schedule Health", "options": "\nGreen\nYellow\nRed"},
+  {"fieldname": "column_break_kpi", "fieldtype": "Column Break"},
+  {"fieldname": "financial_health", "fieldtype": "Select", "label": "Financial Health", "options": "\nGreen\nYellow\nRed"},
+  {"fieldname": "issue_health", "fieldtype": "Select", "label": "Issue Health", "options": "\nGreen\nYellow\nRed"},
+  {"fieldname": "effort_health", "fieldtype": "Select", "label": "Effort Health", "options": "\nGreen\nYellow\nRed"},
+  {"fieldname": "section_narrative", "fieldtype": "Section Break", "label": "Narrative"},
+  {"fieldname": "narrative", "fieldtype": "Text Editor", "label": "Narrative"}
+ ],
+ "permissions": [
+  {"role": "PMO Admin", "read": 1, "write": 1, "create": 1, "delete": 1, "report": 1, "export": 1},
+  {"role": "Portfolio Manager", "read": 1, "write": 1, "create": 1, "report": 1},
+  {"role": "Program Manager", "read": 1, "write": 1, "create": 1, "report": 1},
+  {"role": "Project Manager", "read": 1, "write": 1, "create": 1, "report": 1}
+ ]
+}

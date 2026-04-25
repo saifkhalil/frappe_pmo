@@ -1,0 +1,60 @@
+[
+ {
+  "doctype": "Number Card",
+  "name": "PMO - Active Strategic Goals",
+  "label": "Active Strategic Goals",
+  "type": "Document Type",
+  "document_type": "Strategic Objective",
+  "function": "Count",
+  "filters_json": "[[\"Strategic Objective\",\"is_active\",\"=\",1,false]]",
+  "is_public": 1,
+  "color": "#2490ef",
+  "module": "PMO Reports"
+ },
+ {
+  "doctype": "Number Card",
+  "name": "PMO - Strategic Pillars",
+  "label": "Strategic Pillars",
+  "type": "Document Type",
+  "document_type": "Imperative",
+  "function": "Count",
+  "filters_json": "[[\"Imperative\",\"is_active\",\"=\",1,false]]",
+  "is_public": 1,
+  "color": "#f59e0b",
+  "module": "PMO Reports"
+ },
+ {
+  "doctype": "Number Card",
+  "name": "PMO - Active Portfolios",
+  "label": "Active Portfolios",
+  "type": "Document Type",
+  "document_type": "Portfolio",
+  "function": "Count",
+  "is_public": 1,
+  "color": "#10b981",
+  "module": "PMO Reports"
+ },
+ {
+  "doctype": "Number Card",
+  "name": "PMO - Active Programs",
+  "label": "Active Programs",
+  "type": "Document Type",
+  "document_type": "Program",
+  "function": "Count",
+  "is_public": 1,
+  "color": "#0ea5e9",
+  "module": "PMO Reports"
+ },
+ {
+  "doctype": "Number Card",
+  "name": "PMO - Pending Registrations",
+  "label": "Pending Registrations",
+  "type": "Document Type",
+  "document_type": "Project Registration",
+  "function": "Count",
+  "filters_json": "[[\"Project Registration\",\"workflow_state\",\"in\",[\"Draft\",\"In Review\",\"Sponsor Approval\",\"PMO Approval\"],false]]",
+  "is_public": 1,
+  "color": "#ef4444",
+  "module": "PMO Reports"
+ }
+]

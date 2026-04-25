@@ -1,0 +1,42 @@
+{
+ "doctype": "DocType",
+ "name": "Bookable Resource",
+ "module": "Resources",
+ "engine": "InnoDB",
+ "autoname": "field:resource_name",
+ "naming_rule": "By fieldname",
+ "title_field": "resource_name",
+ "search_fields": "resource_name,user,employee",
+ "track_changes": 1,
+ "field_order": [
+  "resource_name", "resource_type", "column_break_1", "is_active", "time_zone",
+  "section_link", "user", "employee",
+  "section_capacity", "capacity_hours_per_week", "cost_rate", "column_break_c", "billing_rate", "currency",
+  "section_hours", "work_hours"
+ ],
+ "fields": [
+  {"fieldname": "resource_name", "fieldtype": "Data", "label": "Resource Name", "reqd": 1, "unique": 1, "in_list_view": 1, "in_global_search": 1},
+  {"fieldname": "resource_type", "fieldtype": "Select", "label": "Resource Type", "options": "User\nGeneric\nEquipment\nCrew\nPool\nContact", "default": "User", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+  {"fieldname": "is_active", "fieldtype": "Check", "label": "Active", "default": "1"},
+  {"fieldname": "time_zone", "fieldtype": "Data", "label": "Time Zone", "default": "UTC"},
+  {"fieldname": "section_link", "fieldtype": "Section Break", "label": "Linked Records"},
+  {"fieldname": "user", "fieldtype": "Link", "label": "User", "options": "User", "depends_on": "eval:doc.resource_type === 'User'", "mandatory_depends_on": "eval:doc.resource_type === 'User'"},
+  {"fieldname": "employee", "fieldtype": "Link", "label": "Employee", "options": "Employee", "depends_on": "eval:doc.resource_type === 'User'"},
+  {"fieldname": "section_capacity", "fieldtype": "Section Break", "label": "Capacity & Rates"},
+  {"fieldname": "capacity_hours_per_week", "fieldtype": "Float", "label": "Capacity (hours/week)", "default": "40"},
+  {"fieldname": "cost_rate", "fieldtype": "Currency", "label": "Cost Rate (per hour)"},
+  {"fieldname": "column_break_c", "fieldtype": "Column Break"},
+  {"fieldname": "billing_rate", "fieldtype": "Currency", "label": "Billing Rate (per hour)"},
+  {"fieldname": "currency", "fieldtype": "Link", "label": "Currency", "options": "Currency"},
+  {"fieldname": "section_hours", "fieldtype": "Section Break", "label": "Work Hours"},
+  {"fieldname": "work_hours", "fieldtype": "Table", "label": "Work Hours", "options": "Bookable Resource Work Hours"}
+ ],
+ "permissions": [
+  {"role": "PMO Admin", "read": 1, "write": 1, "create": 1, "delete": 1, "report": 1, "export": 1},
+  {"role": "Resource Manager", "read": 1, "write": 1, "create": 1, "delete": 1, "report": 1, "export": 1},
+  {"role": "Portfolio Manager", "read": 1, "report": 1},
+  {"role": "Program Manager", "read": 1, "report": 1},
+  {"role": "Project Manager", "read": 1, "report": 1}
+ ]
+}

@@ -1,0 +1,43 @@
+{
+ "doctype": "DocType",
+ "name": "KR Check-in",
+ "module": "Strategic",
+ "engine": "InnoDB",
+ "autoname": "format:CHK-{YY}-{#####}",
+ "title_field": "checkin_name",
+ "track_changes": 1,
+ "field_order": [
+  "checkin_name", "key_result", "column_break_1", "check_in_date", "owner_user",
+  "section_perf", "current_value", "progress_pct_at_checkin", "column_break_p", "confidence", "apply_to_kr",
+  "section_notes", "message",
+  "section_snap", "baseline_snap", "target_snap", "column_break_s", "measure_direction_snap", "weight_pct_snap"
+ ],
+ "fields": [
+  {"fieldname": "checkin_name", "fieldtype": "Data", "label": "Name", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "key_result", "fieldtype": "Link", "label": "Key Result", "options": "Key Result", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+  {"fieldname": "check_in_date", "fieldtype": "Datetime", "label": "Check-in Date", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "owner_user", "fieldtype": "Link", "label": "Owner", "options": "User"},
+  {"fieldname": "section_perf", "fieldtype": "Section Break", "label": "Performance Update"},
+  {"fieldname": "current_value", "fieldtype": "Float", "label": "Current Value", "reqd": 1},
+  {"fieldname": "progress_pct_at_checkin", "fieldtype": "Percent", "label": "Progress % (at check-in)", "read_only": 1},
+  {"fieldname": "column_break_p", "fieldtype": "Column Break"},
+  {"fieldname": "confidence", "fieldtype": "Int", "label": "Confidence %"},
+  {"fieldname": "apply_to_kr", "fieldtype": "Select", "label": "Apply to KR?", "options": "Yes\nNo", "default": "Yes"},
+  {"fieldname": "section_notes", "fieldtype": "Section Break", "label": "Notes"},
+  {"fieldname": "message", "fieldtype": "Text Editor", "label": "Message"},
+  {"fieldname": "section_snap", "fieldtype": "Section Break", "label": "Snapshot (Historical Context)", "collapsible": 1},
+  {"fieldname": "baseline_snap", "fieldtype": "Float", "label": "Baseline (snap)", "read_only": 1},
+  {"fieldname": "target_snap", "fieldtype": "Float", "label": "Target (snap)", "read_only": 1},
+  {"fieldname": "column_break_s", "fieldtype": "Column Break"},
+  {"fieldname": "measure_direction_snap", "fieldtype": "Data", "label": "Measure Direction (snap)", "read_only": 1},
+  {"fieldname": "weight_pct_snap", "fieldtype": "Percent", "label": "Weight % (snap)", "read_only": 1}
+ ],
+ "permissions": [
+  {"role": "PMO Admin", "read": 1, "write": 1, "create": 1, "delete": 1, "report": 1, "export": 1},
+  {"role": "Portfolio Manager", "read": 1, "write": 1, "create": 1, "report": 1},
+  {"role": "OKR Owner", "read": 1, "write": 1, "create": 1, "report": 1, "if_owner": 1},
+  {"role": "Program Manager", "read": 1, "report": 1},
+  {"role": "Project Manager", "read": 1, "report": 1}
+ ]
+}

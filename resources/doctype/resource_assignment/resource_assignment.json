@@ -1,0 +1,39 @@
+{
+ "doctype": "DocType",
+ "name": "Resource Assignment",
+ "module": "Resources",
+ "engine": "InnoDB",
+ "autoname": "format:RA-{YY}-{#####}",
+ "title_field": "assignment_name",
+ "search_fields": "bookable_resource,project",
+ "track_changes": 1,
+ "field_order": [
+  "assignment_name", "bookable_resource", "column_break_1", "project", "task",
+  "section_dates", "start_date", "end_date", "column_break_d", "allocated_hours", "completed_hours", "remaining_hours",
+  "section_role", "role_label", "notes"
+ ],
+ "fields": [
+  {"fieldname": "assignment_name", "fieldtype": "Data", "label": "Assignment Name", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "bookable_resource", "fieldtype": "Link", "label": "Bookable Resource", "options": "Bookable Resource", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+  {"fieldname": "project", "fieldtype": "Link", "label": "Project", "options": "Project", "in_list_view": 1},
+  {"fieldname": "task", "fieldtype": "Link", "label": "Task", "options": "Task"},
+  {"fieldname": "section_dates", "fieldtype": "Section Break", "label": "Schedule"},
+  {"fieldname": "start_date", "fieldtype": "Date", "label": "Start Date", "reqd": 1},
+  {"fieldname": "end_date", "fieldtype": "Date", "label": "End Date", "reqd": 1},
+  {"fieldname": "column_break_d", "fieldtype": "Column Break"},
+  {"fieldname": "allocated_hours", "fieldtype": "Float", "label": "Allocated Hours", "reqd": 1},
+  {"fieldname": "completed_hours", "fieldtype": "Float", "label": "Completed Hours", "read_only": 1},
+  {"fieldname": "remaining_hours", "fieldtype": "Float", "label": "Remaining Hours", "read_only": 1},
+  {"fieldname": "section_role", "fieldtype": "Section Break", "label": "Role"},
+  {"fieldname": "role_label", "fieldtype": "Data", "label": "Role"},
+  {"fieldname": "notes", "fieldtype": "Small Text", "label": "Notes"}
+ ],
+ "permissions": [
+  {"role": "PMO Admin", "read": 1, "write": 1, "create": 1, "delete": 1, "report": 1, "export": 1},
+  {"role": "Resource Manager", "read": 1, "write": 1, "create": 1, "delete": 1, "report": 1, "export": 1},
+  {"role": "Project Manager", "read": 1, "write": 1, "create": 1, "report": 1},
+  {"role": "Program Manager", "read": 1, "report": 1},
+  {"role": "Portfolio Manager", "read": 1, "report": 1}
+ ]
+}

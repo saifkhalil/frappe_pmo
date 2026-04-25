@@ -1,0 +1,33 @@
+{
+ "doctype": "DocType",
+ "name": "Strategic Period",
+ "module": "Strategic",
+ "engine": "InnoDB",
+ "autoname": "field:period_code",
+ "naming_rule": "By fieldname",
+ "title_field": "period_name",
+ "search_fields": "period_code,period_name",
+ "track_changes": 1,
+ "field_order": [
+  "period_code", "period_name", "column_break_1",
+  "start_date", "target_date", "is_active",
+  "section_break_fy", "fiscal_years"
+ ],
+ "fields": [
+  {"fieldname": "period_code", "fieldtype": "Data", "label": "Period Code", "reqd": 1, "unique": 1, "in_list_view": 1, "description": "e.g. FY26-27"},
+  {"fieldname": "period_name", "fieldtype": "Data", "label": "Period Name", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+  {"fieldname": "start_date", "fieldtype": "Date", "label": "Start Date", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "target_date", "fieldtype": "Date", "label": "Target Date", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "is_active", "fieldtype": "Check", "label": "Active", "default": "1", "in_list_view": 1},
+  {"fieldname": "section_break_fy", "fieldtype": "Section Break", "label": "Linked Fiscal Years"},
+  {"fieldname": "fiscal_years", "fieldtype": "Table", "label": "Fiscal Years", "options": "Strategic Period Fiscal Year"}
+ ],
+ "permissions": [
+  {"role": "PMO Admin", "read": 1, "write": 1, "create": 1, "delete": 1, "report": 1, "export": 1},
+  {"role": "Portfolio Manager", "read": 1, "write": 1, "create": 1, "report": 1},
+  {"role": "Program Manager", "read": 1, "report": 1},
+  {"role": "Project Manager", "read": 1, "report": 1},
+  {"role": "OKR Owner", "read": 1, "report": 1}
+ ]
+}

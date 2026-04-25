@@ -1,0 +1,49 @@
+{
+ "doctype": "DocType",
+ "name": "Portfolio",
+ "module": "PPM",
+ "engine": "InnoDB",
+ "autoname": "field:portfolio_name",
+ "naming_rule": "By fieldname",
+ "title_field": "portfolio_name",
+ "search_fields": "portfolio_name",
+ "track_changes": 1,
+ "field_order": [
+  "portfolio_name", "column_break_1", "portfolio_manager", "is_global", "company",
+  "section_sched", "start_date", "end_date",
+  "section_kpi", "overall_health", "schedule_health", "column_break_kpi", "financial_health", "issue_health",
+  "section_counts", "active_projects", "projects_on_track", "column_break_counts", "projects_at_risk", "projects_in_trouble",
+  "section_desc", "description", "business_case"
+ ],
+ "fields": [
+  {"fieldname": "portfolio_name", "fieldtype": "Data", "label": "Portfolio Name", "reqd": 1, "unique": 1, "in_list_view": 1, "in_global_search": 1},
+  {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+  {"fieldname": "portfolio_manager", "fieldtype": "Link", "label": "Portfolio Manager", "options": "User", "in_list_view": 1},
+  {"fieldname": "is_global", "fieldtype": "Check", "label": "Global (cross-company)", "default": "0"},
+  {"fieldname": "company", "fieldtype": "Link", "label": "Company", "options": "Company", "depends_on": "eval:!doc.is_global", "mandatory_depends_on": "eval:!doc.is_global"},
+  {"fieldname": "section_sched", "fieldtype": "Section Break", "label": "Schedule"},
+  {"fieldname": "start_date", "fieldtype": "Date", "label": "Start Date"},
+  {"fieldname": "end_date", "fieldtype": "Date", "label": "End Date"},
+  {"fieldname": "section_kpi", "fieldtype": "Section Break", "label": "KPIs"},
+  {"fieldname": "overall_health", "fieldtype": "Select", "label": "Overall Health", "options": "\nGreen\nYellow\nRed", "in_list_view": 1},
+  {"fieldname": "schedule_health", "fieldtype": "Select", "label": "Schedule Health", "options": "\nGreen\nYellow\nRed"},
+  {"fieldname": "column_break_kpi", "fieldtype": "Column Break"},
+  {"fieldname": "financial_health", "fieldtype": "Select", "label": "Financial Health", "options": "\nGreen\nYellow\nRed"},
+  {"fieldname": "issue_health", "fieldtype": "Select", "label": "Issue Health", "options": "\nGreen\nYellow\nRed"},
+  {"fieldname": "section_counts", "fieldtype": "Section Break", "label": "Project Counts (rolled up)", "collapsible": 1},
+  {"fieldname": "active_projects", "fieldtype": "Int", "label": "Active Projects", "read_only": 1},
+  {"fieldname": "projects_on_track", "fieldtype": "Int", "label": "On Track", "read_only": 1},
+  {"fieldname": "column_break_counts", "fieldtype": "Column Break"},
+  {"fieldname": "projects_at_risk", "fieldtype": "Int", "label": "At Risk", "read_only": 1},
+  {"fieldname": "projects_in_trouble", "fieldtype": "Int", "label": "In Trouble", "read_only": 1},
+  {"fieldname": "section_desc", "fieldtype": "Section Break", "label": "Description"},
+  {"fieldname": "description", "fieldtype": "Small Text", "label": "Description"},
+  {"fieldname": "business_case", "fieldtype": "Text Editor", "label": "Business Case"}
+ ],
+ "permissions": [
+  {"role": "PMO Admin", "read": 1, "write": 1, "create": 1, "delete": 1, "report": 1, "export": 1},
+  {"role": "Portfolio Manager", "read": 1, "write": 1, "create": 1, "report": 1},
+  {"role": "Program Manager", "read": 1, "report": 1},
+  {"role": "Project Manager", "read": 1, "report": 1}
+ ]
+}
