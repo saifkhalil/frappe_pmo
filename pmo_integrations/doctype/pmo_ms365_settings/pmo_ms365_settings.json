@@ -1,0 +1,38 @@
+{
+ "doctype": "DocType",
+ "name": "PMO MS365 Settings",
+ "module": "PMO Integrations",
+ "issingle": 1,
+ "track_changes": 1,
+ "field_order": [
+  "section_main", "enabled",
+  "section_app", "tenant_id", "client_id", "column_break_1", "client_secret", "redirect_uri",
+  "section_features", "enable_microsoft_login", "sync_tasks_to_outlook", "default_event_reminder_minutes",
+  "section_help", "help_html"
+ ],
+ "fields": [
+  {"fieldname": "section_main", "fieldtype": "Section Break", "label": "General"},
+  {"fieldname": "enabled", "fieldtype": "Check", "label": "Enable Microsoft 365 Integration", "default": "0"},
+
+  {"fieldname": "section_app", "fieldtype": "Section Break", "label": "Azure AD App Registration"},
+  {"fieldname": "tenant_id", "fieldtype": "Data", "label": "Tenant ID (Directory)"},
+  {"fieldname": "client_id", "fieldtype": "Data", "label": "Application (Client) ID"},
+  {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+  {"fieldname": "client_secret", "fieldtype": "Password", "label": "Client Secret"},
+  {"fieldname": "redirect_uri", "fieldtype": "Data", "label": "Redirect URI",
+   "description": "Must match exactly the URI configured in Azure AD. Use: <site>/api/method/isc_pmo.pmo_integrations.ms_graph.oauth_callback"},
+
+  {"fieldname": "section_features", "fieldtype": "Section Break", "label": "Features"},
+  {"fieldname": "enable_microsoft_login", "fieldtype": "Check", "label": "Enable Microsoft Sign-in (SSO)", "default": "1"},
+  {"fieldname": "sync_tasks_to_outlook", "fieldtype": "Check", "label": "Sync Tasks → Outlook Calendar", "default": "1"},
+  {"fieldname": "default_event_reminder_minutes", "fieldtype": "Int", "label": "Default Reminder (minutes before)", "default": "30"},
+
+  {"fieldname": "section_help", "fieldtype": "Section Break", "label": "Setup Instructions", "collapsible": 1},
+  {"fieldname": "help_html", "fieldtype": "HTML",
+   "options": "<div class='text-muted small'><b>One-time Azure setup:</b><ol><li>Go to <a href='https://portal.azure.com' target='_blank'>portal.azure.com</a> → <b>Microsoft Entra ID</b> → <b>App registrations</b> → <b>+ New registration</b>.</li><li>Name: <code>ISC PMO Autopilot</code>. Account types: <i>Single tenant</i>. Redirect URI (Web): the value above.</li><li>Note <b>Tenant ID</b> and <b>Client ID</b>; create a <b>Client secret</b> under Certificates & secrets.</li><li>Under <b>API permissions</b>, add <b>Delegated</b> permissions: <code>openid</code>, <code>profile</code>, <code>email</code>, <code>offline_access</code>, <code>User.Read</code>, <code>Calendars.ReadWrite</code>. Grant admin consent.</li><li>Save this form, then click <b>Setup Microsoft Login</b> and ask each user to click <b>Connect Outlook</b> (User form, top-right menu).</li></ol></div>"}
+ ],
+ "permissions": [
+  {"role": "System Manager", "read": 1, "write": 1, "create": 1},
+  {"role": "PMO Admin", "read": 1, "write": 1}
+ ]
+}

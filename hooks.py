@@ -10,9 +10,12 @@ required_apps = ["frappe/erpnext"]
 
 # DocType document events: rollups, snapshots, workflow side-effects
 doc_events = {
-    "KR Check-in": {
+    "KR Check In": {
         "before_insert": "isc_pmo.strategic.utils.snapshot_check_in",
-        "after_insert": "isc_pmo.strategic.utils.apply_check_in_to_kr",
+        "after_insert": [
+            "isc_pmo.strategic.utils.apply_check_in_to_kr",
+            "isc_pmo.pmo_integrations.teams.on_kr_checkin",
+        ],
     },
     "Key Result": {
         "validate": "isc_pmo.strategic.utils.compute_kr_progress",
@@ -25,7 +28,26 @@ doc_events = {
         "on_update": "isc_pmo.ppm.utils.trigger_program_rollup",
     },
     "Project Registration": {
-        "on_update_after_submit": "isc_pmo.ppm.utils.on_registration_workflow_change",
+        "on_update_after_submit": [
+            "isc_pmo.ppm.utils.on_registration_workflow_change",
+            "isc_pmo.pmo_integrations.teams.on_registration_workflow",
+        ],
+    },
+    "Task": {
+        "on_update": [
+            "isc_pmo.pmo_integrations.teams.on_task_update",
+            "isc_pmo.pmo_integrations.ms_graph.on_task_saved",
+        ],
+        "on_trash": "isc_pmo.pmo_integrations.ms_graph.on_task_trash",
+    },
+    "ToDo": {
+        "after_insert": [
+            "isc_pmo.pmo_integrations.teams.on_todo_after_insert",
+            "isc_pmo.pmo_integrations.ms_graph.on_todo_assigned",
+        ],
+    },
+    "Status Report": {
+        "on_submit": "isc_pmo.pmo_integrations.teams.on_status_report_submit",
     },
 }
 
@@ -69,3 +91,8 @@ after_install = "isc_pmo.install.after_install"
 # Includes (none for now)
 app_include_css = []
 app_include_js = []
+
+# Bundle the User form button into desk JS
+doctype_js = {
+    "User": "public/js/user_form.js",
+}

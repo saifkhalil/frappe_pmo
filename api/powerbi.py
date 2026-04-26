@@ -61,7 +61,7 @@ def kr_check_ins(days: int = 90) -> list[dict]:
         """
         SELECT name, key_result, check_in_date, current_value,
                progress_pct_at_checkin, confidence, owner_user
-        FROM `tabKR Check-in`
+        FROM `tabKR Check In`
         WHERE check_in_date >= DATE_SUB(CURDATE(), INTERVAL %(d)s DAY)
         ORDER BY check_in_date DESC
         """,

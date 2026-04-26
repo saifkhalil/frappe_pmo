@@ -1,0 +1,27 @@
+{
+ "doctype": "DocType",
+ "name": "MS Graph Token",
+ "module": "PMO Integrations",
+ "track_changes": 0,
+ "autoname": "field:user",
+ "field_order": [
+  "user", "tenant_id", "scope",
+  "section_tokens", "access_token", "refresh_token", "expires_at",
+  "section_state", "outlook_calendar_id"
+ ],
+ "fields": [
+  {"fieldname": "user", "fieldtype": "Link", "label": "User", "options": "User", "reqd": 1, "unique": 1, "in_list_view": 1},
+  {"fieldname": "tenant_id", "fieldtype": "Data", "label": "Tenant ID"},
+  {"fieldname": "scope", "fieldtype": "Small Text", "label": "Granted Scopes"},
+  {"fieldname": "section_tokens", "fieldtype": "Section Break", "label": "Tokens", "collapsible": 1},
+  {"fieldname": "access_token", "fieldtype": "Long Text", "label": "Access Token"},
+  {"fieldname": "refresh_token", "fieldtype": "Password", "label": "Refresh Token"},
+  {"fieldname": "expires_at", "fieldtype": "Datetime", "label": "Access Token Expires At", "in_list_view": 1},
+  {"fieldname": "section_state", "fieldtype": "Section Break", "label": "Calendar"},
+  {"fieldname": "outlook_calendar_id", "fieldtype": "Data", "label": "Outlook Calendar ID (Default)"}
+ ],
+ "permissions": [
+  {"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1},
+  {"role": "PMO Admin", "read": 1, "write": 1}
+ ]
+}

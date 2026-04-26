@@ -1,0 +1,276 @@
+{
+ "charts": [],
+ "content": "[{\"id\": \"header_main\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Project Management</b></span>\", \"col\": 12}}, {\"id\": \"header_shortcuts\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h6\\\"><b>Your Shortcuts</b></span>\", \"col\": 12}}, {\"id\": \"sc_Dashboard\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Dashboard\", \"col\": 3}}, {\"id\": \"sc_Imperatives\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Imperatives\", \"col\": 3}}, {\"id\": \"sc_Strategic Objectives\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Strategic Objectives\", \"col\": 3}}, {\"id\": \"sc_Key Results\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Key Results\", \"col\": 3}}, {\"id\": \"sc_KR Check-ins\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"KR Check-ins\", \"col\": 3}}, {\"id\": \"sc_Portfolios\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Portfolios\", \"col\": 3}}, {\"id\": \"sc_Programs\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Programs\", \"col\": 3}}, {\"id\": \"sc_Projects\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Projects\", \"col\": 3}}, {\"id\": \"sc_Project Registrations\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Project Registrations\", \"col\": 3}}, {\"id\": \"sc_Bookable Resources\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Bookable Resources\", \"col\": 3}}, {\"id\": \"spacer1\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"header_reports\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h6\\\"><b>Reports & Masters</b></span>\", \"col\": 12}}, {\"id\": \"card_Strategic\", \"type\": \"card\", \"data\": {\"card_name\": \"Strategic\", \"col\": 4}}, {\"id\": \"card_Portfolios & Programs\", \"type\": \"card\", \"data\": {\"card_name\": \"Portfolios & Programs\", \"col\": 4}}, {\"id\": \"card_Delivery\", \"type\": \"card\", \"data\": {\"card_name\": \"Delivery\", \"col\": 4}}, {\"id\": \"card_Resources\", \"type\": \"card\", \"data\": {\"card_name\": \"Resources\", \"col\": 4}}]",
+ "creation": "2026-04-26 01:14:27.016117",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "project",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Project Management",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Strategic",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Imperative",
+   "link_count": 0,
+   "link_to": "Imperative",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Strategic Objective",
+   "link_count": 0,
+   "link_to": "Strategic Objective",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Key Result",
+   "link_count": 0,
+   "link_to": "Key Result",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "KR Check In",
+   "link_count": 0,
+   "link_to": "KR Check In",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Strategic Period",
+   "link_count": 0,
+   "link_to": "Strategic Period",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Portfolios & Programs",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Portfolio",
+   "link_count": 0,
+   "link_to": "Portfolio",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Program",
+   "link_count": 0,
+   "link_to": "Program",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project",
+   "link_count": 0,
+   "link_to": "Project",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Registration",
+   "link_count": 0,
+   "link_to": "Project Registration",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Delivery",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Status Report",
+   "link_count": 0,
+   "link_to": "Status Report",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "RAID Item",
+   "link_count": 0,
+   "link_to": "RAID Item",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Lessons Learned",
+   "link_count": 0,
+   "link_to": "Lessons Learned",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Resources",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Bookable Resource",
+   "link_count": 0,
+   "link_to": "Bookable Resource",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Resource Assignment",
+   "link_count": 0,
+   "link_to": "Resource Assignment",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-04-26 01:14:27.016117",
+ "modified_by": "Administrator",
+ "module": "PMO Reports",
+ "name": "Project Management",
+ "number_cards": [],
+ "owner": "Administrator",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 20.0,
+ "shortcuts": [
+  {
+   "color": "Blue",
+   "doc_view": "",
+   "label": "Dashboard",
+   "link_to": "ISC PMO Autopilot Overview",
+   "type": "Dashboard"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "",
+   "label": "Imperatives",
+   "link_to": "Imperative",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "",
+   "label": "Strategic Objectives",
+   "link_to": "Strategic Objective",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "",
+   "label": "Key Results",
+   "link_to": "Key Result",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "",
+   "label": "KR Check-ins",
+   "link_to": "KR Check In",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "",
+   "label": "Portfolios",
+   "link_to": "Portfolio",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "",
+   "label": "Programs",
+   "link_to": "Program",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "",
+   "label": "Projects",
+   "link_to": "Project",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "",
+   "label": "Project Registrations",
+   "link_to": "Project Registration",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "",
+   "label": "Bookable Resources",
+   "link_to": "Bookable Resource",
+   "type": "DocType"
+  }
+ ],
+ "title": "Project Management"
+}

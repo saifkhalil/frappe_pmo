@@ -143,10 +143,10 @@ def _seed_check_ins(krs: dict[str, str]):
     target_kr = krs.get("Improve Teams Perception of Performance")
     if not target_kr:
         return
-    if frappe.db.exists("KR Check-in", {"checkin_name": "_TR 4th Quarter 2nd Update"}):
+    if frappe.db.exists("KR Check In", {"checkin_name": "_TR 4th Quarter 2nd Update"}):
         return
     frappe.get_doc({
-        "doctype": "KR Check-in",
+        "doctype": "KR Check In",
         "checkin_name": "_TR 4th Quarter 2nd Update",
         "key_result": target_kr,
         "check_in_date": "2025-12-15 07:39:00",

@@ -1,0 +1,39 @@
+{
+ "doctype": "DocType",
+ "name": "PMO Integration Settings",
+ "module": "PMO Integrations",
+ "issingle": 1,
+ "track_changes": 1,
+ "field_order": [
+  "section_main", "enabled",
+  "section_teams", "teams_webhook_url", "teams_help",
+  "column_break_1",
+  "notify_assignments", "notify_task_updates", "notify_status_reports",
+  "notify_registrations", "notify_okr_checkins",
+  "section_calendar", "calendar_help"
+ ],
+ "fields": [
+  {"fieldname": "section_main", "fieldtype": "Section Break", "label": "General"},
+  {"fieldname": "enabled", "fieldtype": "Check", "label": "Enable Integrations", "default": "1"},
+
+  {"fieldname": "section_teams", "fieldtype": "Section Break", "label": "Microsoft Teams"},
+  {"fieldname": "teams_webhook_url", "fieldtype": "Password", "label": "Teams Incoming Webhook URL"},
+  {"fieldname": "teams_help", "fieldtype": "HTML",
+   "options": "<div class='text-muted small'>Teams → channel → ⋯ → <b>Workflows</b> → <i>Post to a channel when a webhook request is received</i>. Paste the resulting URL above. Use <b>Send Test</b> after saving.</div>"},
+
+  {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+  {"fieldname": "notify_assignments", "fieldtype": "Check", "label": "Notify on Assignments (ToDo)", "default": "1"},
+  {"fieldname": "notify_task_updates", "fieldtype": "Check", "label": "Notify on Task Updates", "default": "1"},
+  {"fieldname": "notify_status_reports", "fieldtype": "Check", "label": "Notify on Status Reports", "default": "1"},
+  {"fieldname": "notify_registrations", "fieldtype": "Check", "label": "Notify on Registration Workflow", "default": "1"},
+  {"fieldname": "notify_okr_checkins", "fieldtype": "Check", "label": "Notify on OKR Check-ins", "default": "0"},
+
+  {"fieldname": "section_calendar", "fieldtype": "Section Break", "label": "Calendar (iCal/Outlook/Google)"},
+  {"fieldname": "calendar_help", "fieldtype": "HTML",
+   "options": "<div class='text-muted small'>Each user can subscribe to <b>their own</b> calendar feed (Tasks + Projects + KR target dates).<br/>Get the personal URL by calling: <code>/api/method/isc_pmo.pmo_integrations.calendar_feed.my_subscription_url</code> while logged in, then paste it into Outlook (Add calendar → Subscribe from web) or Google Calendar (Other calendars → From URL).</div>"}
+ ],
+ "permissions": [
+  {"role": "System Manager", "read": 1, "write": 1, "create": 1},
+  {"role": "PMO Admin", "read": 1, "write": 1, "create": 1}
+ ]
+}

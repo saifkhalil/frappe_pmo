@@ -1,6 +1,6 @@
 {
  "doctype": "DocType",
- "name": "KR Check-in",
+ "name": "KR Check In",
  "module": "Strategic",
  "engine": "InnoDB",
  "autoname": "format:CHK-{YY}-{#####}",

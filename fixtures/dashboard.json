@@ -4,7 +4,7 @@
   "name": "ISC PMO Autopilot Overview",
   "dashboard_name": "ISC PMO Autopilot Overview",
   "is_default": 0,
-  "is_standard": 1,
+  "is_standard": 0,
   "module": "PMO Reports",
   "cards": [
    {"card": "PMO - Strategic Pillars"},

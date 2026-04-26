@@ -1,0 +1,9 @@
+"""MS Graph Token — stores a user's OAuth tokens (refresh + access)."""
+from __future__ import annotations
+
+import frappe
+from frappe.model.document import Document
+
+
+class MSGraphToken(Document):
+    pass
