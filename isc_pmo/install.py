@@ -219,4 +219,7 @@ def create_workspaces():
 
         ws.flags.ignore_mandatory = True
         ws.flags.ignore_permissions = True
+        # Fixtures (e.g. the "ISC PMO Autopilot Overview" Dashboard) are synced
+        # *after* after_install runs, so skip link validation here.
+        ws.flags.ignore_links = True
         ws.save(ignore_permissions=True)
