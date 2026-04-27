@@ -21,8 +21,35 @@ def after_install():
     _seed_default_strategic_period()
     _add_user_calendar_token_field()
     _add_task_outlook_event_field()
+    _ensure_dashboard_stubs()
     create_workspaces()
     frappe.db.commit()
+
+
+def _ensure_dashboard_stubs():
+    """Pre-create Dashboard docs referenced by workspace shortcuts.
+
+    On Frappe Cloud, ``sync_fixtures`` runs *after* ``after_install``, so any
+    workspace shortcut/link that points to a Dashboard fixture would fail link
+    validation. We insert a minimal stub here; the real fixture sync will
+    overwrite/update it later in the install flow.
+    """
+    for dashboard_name in ("ISC PMO Autopilot Overview",):
+        if frappe.db.exists("Dashboard", dashboard_name):
+            continue
+        try:
+            doc = frappe.get_doc({
+                "doctype": "Dashboard",
+                "dashboard_name": dashboard_name,
+                "module": "PMO Reports",
+                "is_standard": 0,
+            })
+            doc.flags.ignore_permissions = True
+            doc.flags.ignore_mandatory = True
+            doc.insert(ignore_permissions=True, ignore_if_duplicate=True)
+        except Exception:
+            # Best-effort; if it still fails the workspace save will surface a clear error.
+            frappe.log_error(frappe.get_traceback(), f"isc_pmo: stub Dashboard {dashboard_name} failed")
 
 
 def _create_roles():
@@ -219,7 +246,4 @@ def create_workspaces():
 
         ws.flags.ignore_mandatory = True
         ws.flags.ignore_permissions = True
-        # Fixtures (e.g. the "ISC PMO Autopilot Overview" Dashboard) are synced
-        # *after* after_install runs, so skip link validation here.
-        ws.flags.ignore_links = True
         ws.save(ignore_permissions=True)
